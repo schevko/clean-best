@@ -1,0 +1,4 @@
+#!/bin/zsh
+export PATH="$HOME/.nvm/versions/node/v24.22.0/bin:$HOME/.bun/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+APP_ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
+exec "$APP_ROOT/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron" "$APP_ROOT/electron/main.cjs"

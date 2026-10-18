@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  html,
+  body,
+  #root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI Variable", "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.overflow-y-auto {
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+}
+
+/* Custom CleanMyMac 5 Glassmorphic Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* CleanMyLiveBackground Orb Rotation Keyframes (transform.rotation.z) */
+@keyframes orbRotate1 {
+  0% {
+    transform: translate(-10%, -10%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(12%, 8%) rotate(180deg) scale(1.14);
+  }
+  100% {
+    transform: translate(-10%, -10%) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes orbRotate2 {
+  0% {
+    transform: translate(15%, -5%) rotate(360deg) scale(1.08);
+  }
+  50% {
+    transform: translate(-12%, 14%) rotate(180deg) scale(0.94);
+  }
+  100% {
+    transform: translate(15%, -5%) rotate(0deg) scale(1.08);
+  }
+}
+
+@keyframes orbRotate3 {
+  0% {
+    transform: translate(0%, 15%) rotate(0deg) scale(0.96);
+  }
+  50% {
+    transform: translate(10%, -12%) rotate(180deg) scale(1.12);
+  }
+  100% {
+    transform: translate(0%, 15%) rotate(360deg) scale(0.96);
+  }
+}
+
+.cmm-orb-1 {
+  animation: orbRotate1 22s ease-in-out infinite;
+}
+.cmm-orb-2 {
+  animation: orbRotate2 26s ease-in-out infinite;
+}
+.cmm-orb-3 {
+  animation: orbRotate3 19s ease-in-out infinite;
+}
+
+.cmm-glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.cmm-glass-sidebar {
+  background: linear-gradient(180deg, rgba(12, 10, 28, 0.42) 0%, rgba(12, 10, 28, 0.64) 100%);
+  backdrop-filter: blur(36px);
+  -webkit-backdrop-filter: blur(36px);
+  border-right: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+/* Native Electron Window Drag Regions */
+.app-drag-region {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+.app-no-drag,
+.app-drag-region button,
+.app-drag-region a,
+.app-drag-region input,
+.app-drag-region select,
+.app-drag-region [role="button"] {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
